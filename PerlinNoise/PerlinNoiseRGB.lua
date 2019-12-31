@@ -134,9 +134,9 @@ function update()
     z = z + 1
     for c = 0, cols - 1 do
         for r = 0, rows - 1 do
-            h = noise(c * scale, r * scale, z * scale * 0.9) * 0.9 + 0.1
+            h = noise(c * scale, r * scale, z * scale * 0.9) * 0.8 + 0.8
             s = noise(c * scale, r * scale, z * scale * 1.0) * 0.5 + 0.5
-            v = noise(c * scale, r * scale, z * scale * 1.1) * 0.1 + 0.9
+            v = noise(c * scale, r * scale, z * scale * 1.1) * 0.2 + 0.2
             rgb = hsv2rgb(h, s, v)
             if not port then return end
             port:write('SET RGB ' .. tostring(c * rows + r) .. ' ' ..  tostring(rgb[1]) .. ' ' ..  tostring(rgb[2]) .. ' ' ..  tostring(rgb[3]) .. '\n')
